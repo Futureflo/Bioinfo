@@ -1,0 +1,5 @@
+USE
+	sequencetranslator;
+    
+CREATE TABLE
+	sequence (id INTEGER AUTO_INCREMENT PRIMARY KEY, sequencenumber INTEGER, sequence TEXT);

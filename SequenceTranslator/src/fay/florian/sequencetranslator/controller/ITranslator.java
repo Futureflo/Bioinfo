@@ -1,6 +1,8 @@
 package fay.florian.sequencetranslator.controller;
 
+import java.util.ArrayList;
+
 public interface ITranslator {
 
-	public String translate(String sequence);
+	public ArrayList<String> translate(String sequence);
 }

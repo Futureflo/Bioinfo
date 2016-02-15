@@ -3,6 +3,7 @@ package fay.florian.sequencetranslator.view;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import fay.florian.sequencetranslator.controller.ITranslator;
 import fay.florian.sequencetranslator.controller.TranslatorFactory;
 
 public class MainView extends JFrame {
@@ -42,7 +44,19 @@ public class MainView extends JFrame {
 
 			public void actionPerformed(ActionEvent e) {
 
-				TranslatorFactory.getTranslator("").translate(inputArea.getText());
+				ITranslator myTranslator = TranslatorFactory.getTranslator("");
+				String textIn = inputArea.getText();
+				ArrayList<String> ausgabe = myTranslator.translate(textIn);
+				System.out.println(ausgabe);
+				int sequenceCounter = 1;
+				String outputText = "";
+				for (String sequence : ausgabe) {
+					outputText += (sequenceCounter + ": " + sequence + "\n");
+
+					sequenceCounter++;
+				}
+				outputArea.setText(outputText);
+				repaint();
 			}
 		};
 		translateButton.addActionListener(translateListener);
