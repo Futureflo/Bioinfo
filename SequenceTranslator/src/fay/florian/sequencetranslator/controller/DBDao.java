@@ -11,6 +11,19 @@ import fay.florian.sequencetranslator.model.Sequence;
 
 public class DBDao implements ISequenceDao {
 
+	private static DBDao instance;
+
+	private DBDao() {
+
+	}
+
+	public static DBDao getInstance() {
+		if (instance == null) {
+			instance = new DBDao();
+		}
+		return instance;
+	}
+
 	public ArrayList<Sequence> save(ArrayList<Sequence> sequences, File location) {
 
 		Connection con = null;

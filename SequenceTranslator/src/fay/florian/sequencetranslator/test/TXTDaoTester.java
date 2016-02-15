@@ -11,7 +11,7 @@ public class TXTDaoTester {
 
 	public static void main(String[] args) {
 
-		TXTDao myDao = new TXTDao();
+		TXTDao myDao = TXTDao.getInstance();
 
 		ArrayList<Sequence> sequences = new ArrayList<Sequence>();
 

@@ -11,7 +11,7 @@ public class XMLDaoTester {
 
 	public static void main(String[] args) {
 
-		XMLDao myDao = new XMLDao();
+		XMLDao myDao = XMLDao.getInstance();
 		ArrayList<Sequence> sequences = new ArrayList<Sequence>();
 
 		Sequence mySequence = new DNASequence();

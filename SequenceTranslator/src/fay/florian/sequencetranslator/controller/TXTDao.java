@@ -13,6 +13,19 @@ import fay.florian.sequencetranslator.view.ErrorMessageView;
 
 public class TXTDao implements ISequenceDao {
 
+	private static TXTDao instance;
+
+	private TXTDao() {
+
+	}
+
+	public static TXTDao getInstance() {
+		if (instance == null) {
+			instance = new TXTDao();
+		}
+		return instance;
+	}
+
 	public ArrayList<Sequence> save(ArrayList<Sequence> sequences, File location) {
 		try {
 			/*

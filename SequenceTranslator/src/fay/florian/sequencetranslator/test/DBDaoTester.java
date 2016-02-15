@@ -11,7 +11,7 @@ public class DBDaoTester {
 
 	public static void main(String[] args) {
 
-		DBDao myDao = new DBDao();
+		DBDao myDao = DBDao.getInstance();
 
 		ArrayList<Sequence> sequences = new ArrayList<Sequence>();
 

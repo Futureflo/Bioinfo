@@ -17,6 +17,19 @@ import fay.florian.sequencetranslator.model.Sequence;
 
 public class XMLDao implements ISequenceDao {
 
+	private static XMLDao instance;
+
+	private XMLDao() {
+
+	}
+
+	public static XMLDao getInstance() {
+		if (instance == null) {
+			instance = new XMLDao();
+		}
+		return instance;
+	}
+
 	public ArrayList<Sequence> save(ArrayList<Sequence> sequences, File location) {
 
 		VelocityEngine ve = new VelocityEngine();
